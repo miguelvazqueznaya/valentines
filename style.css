@@ -1,0 +1,21 @@
+.message-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+    border: 2px solid #fc2c03; /* Light Pink border */
+    border-radius: 15px;
+    padding: 10px;
+    font-family: inherit;
+    outline: none;
+    resize: none; /* Prevents the user from messing up your layout */
+}
+
+textarea:focus {
+    box-shadow: 0 0 10px #ffb6c1; /* Glows when you click it */
+}
