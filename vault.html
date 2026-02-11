@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Vault</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #fff0f5; /* A soft lavender/pink background */
+      text-align: center;
+      padding: 50px;
+    }
+
+    #timer {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fc2c03;
+      margin: 20px 0;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .timer-label {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<h1>Hey babygirl</h1>
+<p>We've been together for...</p>
+
+<div class="photo-vault">
+  <div class="timer-label">Wait its been how long?!:</div>
+  <div id="timer">Calculating...</div>
+
+  <p>Heehee to many more seconds minutes hours and days my beautiful hermosa girl ❤️</p>
+
+  <div class="button-grid">
+    <a href="year_1.html" class="next-page-btn">View Year 1</a>
+    <a href="year_2.html" class="next-page-btn">View Year 2</a>
+    <a href="year_3.html" class="next-page-btn">View Year 3</a>
+    <a href="year_4.html" class="next-page-btn">View Year 4</a>
+    <a href="valentine.html" class="next-page-btn">Mystery?!</a>
+  </div>
+</div>
+
+<script>
+  function updateTimer() {
+    const startDate = new Date("February 12, 2022 00:00:00").getTime();
+    const now = new Date().getTime();
+    const difference = now - startDate;
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    document.getElementById("timer").innerHTML =
+    days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+  }
+
+  // Update the timer every 1 second
+  setInterval(updateTimer, 1000);
+  updateTimer(); // Run once immediately
+</script>
+
+</body>
+</html>
